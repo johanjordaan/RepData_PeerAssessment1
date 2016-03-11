@@ -10,6 +10,7 @@ output:
 library(dplyr)
 library(lubridate)
 library(ggplot2)
+options(scipen = 2, digits = 2)
 ```
 
 ## Loading and preprocessing the data
@@ -52,7 +53,7 @@ ggplot(daily_activity,aes(interval,mean)) +
 
 ```
 
-On average the '''r max_mean''' interval contains the maximun number of steps. 
+On average the ```r max_mean``` interval contains the maximun number of steps. 
 
 
 ## Inputing missing values
@@ -87,7 +88,7 @@ print(p2)
 
 The mean number of steps per day are ```r fixed_mean_steps_per_day``` and the median number of steps per day are ```r fixed_median_steps_per_day```.
 
-For ease of reference here is the histogram again for the non fixed data. Fixing the data has had a marked effect on the mean and the median of the data.
+For ease of reference here is the histogram again for the non fixed data. Fixing the data has had a marked effect on the mean and the median of the data. The mean is bigger (```r mean_steps_per_day``` to ```r fixed_mean_steps_per_day```) and the median is smaller (```r median_steps_per_day``` to ```r fixed_median_steps_per_day```). By introducing the fix the mean and median has convered to ```r median_steps_per_day```.
 
 ```{r ref_graph}
 print(p1)

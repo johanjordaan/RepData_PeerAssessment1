@@ -6,6 +6,7 @@
 library(dplyr)
 library(lubridate)
 library(ggplot2)
+options(scipen = 2, digits = 2)
 ```
 
 ## Loading and preprocessing the data
@@ -36,7 +37,7 @@ print(p1)
 
 ![](PA1_template_files/figure-html/mean_steps_per_day-1.png)
 
-The mean number of steps per day are ``9354.2295082`` and the median number of steps per day are ``10395``.
+The mean number of steps per day are ``9354.23`` and the median number of steps per day are ``10395``.
 
 
 ## What is the average daily activity pattern?
@@ -54,7 +55,7 @@ ggplot(daily_activity,aes(interval,mean)) +
 
 ![](PA1_template_files/figure-html/daily_activity_pattern-1.png)
 
-On average the '''r max_mean''' interval contains the maximun number of steps. 
+On average the ``835, 206.17`` interval contains the maximun number of steps. 
 
 
 ## Inputing missing values
@@ -91,9 +92,9 @@ print(p2)
 
 ![](PA1_template_files/figure-html/fix_missing_values-1.png)
 
-The mean number of steps per day are ``1.0766189\times 10^{4}`` and the median number of steps per day are ``1.0766189\times 10^{4}``.
+The mean number of steps per day are ``10766.19`` and the median number of steps per day are ``10766.19``.
 
-For ease of reference here is the histogram again for the non fixed data. Fixing the data has had a marked effect on the mean and the median of the data.
+For ease of reference here is the histogram again for the non fixed data. Fixing the data has had a marked effect on the mean and the median of the data. The mean is bigger (``9354.23`` to ``10766.19``) and the median is smaller (``10395`` to ``10766.19``). By introducing the fix the mean and median has convered to ``10395``.
 
 
 ```r
