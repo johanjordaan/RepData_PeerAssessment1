@@ -37,9 +37,46 @@ The mean number of steps per day are ``9354.2295082`` and the median number of s
 
 ## What is the average daily activity pattern?
 
+```r
+daily_activity <- steps %>% group_by(interval) %>% summarise(mean=mean(steps,na.rm=TRUE))
+
+max_mean <- daily_activity %>% filter(mean == max(daily_activity$mean))
+
+ggplot(daily_activity,aes(interval,mean)) + 
+  geom_line() +
+  geom_vline(aes(xintercept=max_mean$interval,color="Max Mean")) +
+  scale_color_manual("Points of Interest", values=c("Max Mean"="orange"))
+```
+
+![](PA1_template_files/figure-html/daily_activity_pattern-1.png)
+
+On average the '''r max_mean''' interval contains the maximun number of steps. 
 
 
 ## Inputing missing values
+
+```r
+na_steps <- steps %>% filter(is.na(steps))
+no_na_steps <- dim(na_steps)[1]
+```
+
+The dataset contains ``2304`` rows that has missing step values. In order to fix this I will replace the missing values with the average values for the affected interval across all days.
+
+
+```r
+fix <- function(v,m) {
+  
+  print(head(v))
+  print(head(m))
+  if(is.na(v)) 
+    return(m)
+  else 
+    return(v)
+}
+#steps_fixed <- steps %>% mutate(steps = fix(steps,daily_activity$mean))
+#daily_activity
+```
+
 
 
 
