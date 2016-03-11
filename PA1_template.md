@@ -55,7 +55,7 @@ ggplot(daily_activity,aes(interval,mean)) +
 
 ![](PA1_template_files/figure-html/daily_activity_pattern-1.png)
 
-On average the ``835, 206.17`` interval contains the maximun number of steps. 
+On average the ``835``th interval contains the maximun number of steps. 
 
 
 ## Inputing missing values
@@ -94,7 +94,7 @@ print(p2)
 
 The mean number of steps per day are ``10766.19`` and the median number of steps per day are ``10766.19``.
 
-For ease of reference here is the histogram again for the non fixed data. Fixing the data has had a marked effect on the mean and the median of the data. The mean is bigger (``9354.23`` to ``10766.19``) and the median is smaller (``10395`` to ``10766.19``). By introducing the fix the mean and median has convered to ``10395``.
+For ease of reference here is the histogram again for the non fixed data. Fixing the data has had a marked effect on the mean and the median of the data. The mean is bigger (``9354.23`` to ``10766.19``) and the median is also bigger (``10395`` to ``10766.19``). By introducing the fix the mean and median has convered to ``10395``.
 
 
 ```r
